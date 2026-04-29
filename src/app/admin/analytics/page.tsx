@@ -69,7 +69,7 @@ export default function AnalyticsPage() {
             <PieChart>
               <Pie data={stats.priorityDistribution || []} dataKey="count" nameKey="priority"
                 cx="50%" cy="50%" outerRadius={90} innerRadius={40}
-                label={({ priority, count }) => `${priority}: ${count}`}>
+                label={({ priority, count }: any) => `${priority}: ${count}`}>
                 {(stats.priorityDistribution || []).map((e: { priority: string }) => (
                   <Cell key={e.priority} fill={PRIORITY_COLORS[e.priority] || '#94a3b8'} />
                 ))}

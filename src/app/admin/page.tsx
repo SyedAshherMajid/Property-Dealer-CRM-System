@@ -81,7 +81,7 @@ export default function AdminDashboard() {
                   cx="50%"
                   cy="50%"
                   outerRadius={80}
-                  label={({ priority, count }) => `${priority}: ${count}`}
+                  label={({ priority, count }: any) => `${priority}: ${count}`}
                 >
                   {stats.priorityDistribution.map((entry: { priority: string }) => (
                     <Cell key={entry.priority} fill={PRIORITY_COLORS[entry.priority] || '#94a3b8'} />
