@@ -14,7 +14,7 @@ export async function GET(req: NextRequest) {
   const { searchParams } = new URL(req.url);
   const role = searchParams.get('role');
 
-  const filter = role ? { role } : {};
+  const filter: Record<string, unknown> = role ? { role } : {};
   const users = await User.find(filter).select('-password').sort({ createdAt: -1 }).lean();
 
   return NextResponse.json({ users });
